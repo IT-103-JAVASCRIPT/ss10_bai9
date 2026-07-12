@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sinh viên</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center">Quản Lý Sinh Viên</h1>
+
+    <div class="form-container">
+        <form id="studentForm">
+            <div class="form-group">
+                <label for="studentId">Mã sinh viên (*):</label>
+                <input type="text" id="studentId" placeholder="Nhập mã sinh viên (VD: SV001)">
+            </div>
+            
+            <div class="form-group">
+                <label for="studentName">Tên sinh viên (*):</label>
+                <input type="text" id="studentName" placeholder="Nhập tên sinh viên (Tối thiểu 5 ký tự)">
+            </div>
+
+            <div class="form-group">
+                <label for="studentScore">Điểm trung bình (*):</label>
+                <input type="number" id="studentScore" step="0.1" placeholder="Nhập điểm (0 - 10)">
+            </div>
+
+            <input type="hidden" id="editIndex" value="">
+
+            <div class="form-actions">
+                <button type="button" id="submitBtn" class="btn btn-primary">Thêm sinh viên</button>
+                <button type="button" id="resetBtn" class="btn btn-secondary">Làm mới form</button>
+            </div>
+        </form>
+    </div>
+
+    <hr>
+
+    <div class="table-container">
+        <h2>Danh sách sinh viên</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã SV</th>
+                    <th>Tên sinh viên</th>
+                    <th>Điểm TB</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="studentList">
+                <tr>
+                    <td>1</td>
+                    <td>SV001</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>8.5</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm edit-btn">Sửa</button>
+                        <button class="btn btn-danger btn-sm delete-btn">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pagination" id="pagination">
+            <button class="btn btn-sm">&laquo; Trước</button>
+            <button class="btn btn-sm active">1</button>
+            <button class="btn btn-sm">2</button>
+            <button class="btn btn-sm">Sau &raquo;</button>
+        </div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
